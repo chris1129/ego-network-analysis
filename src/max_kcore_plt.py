@@ -16,7 +16,7 @@ def maxkcore(dir):
 		if(arr[0][j]>0):
 			plt.text(arr[1][j],arr[0][j]+1,int(arr[0][j]),color='blue', fontweight='bold')
 
-	plt.ylabel('amount')
+	plt.ylabel('Frequency')
 	plt.xlabel('max_k')
 	title=dir[dir.rfind('/'):]
 	plt.title(title)

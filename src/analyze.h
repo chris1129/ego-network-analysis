@@ -11,15 +11,10 @@ void analyze(string filename,int alg_para,string dirname){
 	fstream ori_file;
 	ofstream newfile;
 	ori_file.open(filename);
-	cout<<"Analyzing "<<filename<<"....."<<endl;
 	if (!ori_file.is_open()) {
-		cout << "can't open the file" << endl;
 		return ;
 	} 
 	int algo = alg_para;
-	// string newName = "summary.txt";
-	// newfile.open(newName);
-
 	int num_leaves = 0, max_K = INT_MIN, v_withMaxK = -1, e_withMaxK = -1, size_limit = 10;
 	int num_den_overlimit = 0, num_V_overlimit = 0, num_pass_both = 0, more1_children = 0, num_children = 0;
 	float den_limit = 0.8;
@@ -71,8 +66,8 @@ void analyze(string filename,int alg_para,string dirname){
   	ofstream Num_leaf(dirname+"/Num_leaf.txt",std::ios::app);
   	ofstream avg_children(dirname+"/avg_#children.txt",std::ios::app);
   	ofstream avg_ExcessOneChildren(dirname+"/avg_#ExcessOneChildren.txt",std::ios::app);
-  	ofstream subden(dirname+"/avg_#DenExcessThold.txt",std::ios::app);
-  	ofstream subdensize(dirname+"/avg_#DenSizeExcessThold.txt",std::ios::app);
+  	// ofstream subden(dirname+"/avg_#DenExcessThold.txt",std::ios::app);
+  	// ofstream subdensize(dirname+"/avg_#DenSizeExcessThold.txt",std::ios::app);
   	ofstream vmaxk(dirname+"/num_vWithMaxk.txt",std::ios::app);
   	//#ofchildren/#subgraph
   	int num_node=(int)node_id.size();
@@ -81,8 +76,8 @@ void analyze(string filename,int alg_para,string dirname){
 	Num_leaf <<fname<< " #leaves: " + to_string(num_leaves) << endl;
 	avg_children <<fname<< " avg_#children: " + to_string((float)num_children / (float)(num_node))<<" ("<<(float)num_children<<"/"<<(float)(num_node)<<")" << endl;
 	avg_ExcessOneChildren <<fname<< " factor_of_#children > 1: " + to_string((float)more1_children / (float)num_node)<<" ("<<(float)more1_children<< "/"<< (float)num_node<<")" << endl;
-	subden <<fname<< " factor_of_density > 0.8: " + to_string((float)num_den_overlimit / (float)num_node)<<" ("<<(float)num_den_overlimit<<"/"<<(float)num_node<<")" << endl;
-	subdensize <<fname<< " factor_of_both: " + to_string((float)num_pass_both / (float)num_node)<<" ("<<(float)num_pass_both<< "/"<< (float)num_node<<")" << endl;
+	// subden <<fname<< " factor_of_density > 0.8: " + to_string((float)num_den_overlimit / (float)num_node)<<" ("<<(float)num_den_overlimit<<"/"<<(float)num_node<<")" << endl;
+	// subdensize <<fname<< " factor_of_both: " + to_string((float)num_pass_both / (float)num_node)<<" ("<<(float)num_pass_both<< "/"<< (float)num_node<<")" << endl;
 	kcore_summaryfile <<fname<< " max_K: " + (max_K>0?to_string(max_K):"0") << endl;
 	if (algo == 12)    // k-core
 		vmaxk <<fname<< " Vertices_with_max_K: " +(v_withMaxK>=0?to_string(v_withMaxK):"0")  << endl;

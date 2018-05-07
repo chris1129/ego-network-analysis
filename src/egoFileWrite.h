@@ -1,5 +1,6 @@
-
-
+#ifndef EGOFILEWRITE_H
+#define EGOFILEWRITE_H
+#include "simplehash.h"
 
 void OutputEgoFile(vector<unordered_map<int,vector<int>>>&ego_net,string file_name){
   system("mkdir data/temp");
@@ -40,3 +41,5 @@ void OutputEgoFile(vector<unordered_map<int,vector<int>>>&ego_net,string file_na
     }
   }
 }
+
+#endif

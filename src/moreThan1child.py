@@ -15,7 +15,7 @@ def RatioMoreThanOneChild(dir):
 	for j in range(len(arr[0])):
 		if(arr[0][j]>0):
 			plt.text(arr[1][j],arr[0][j]+10,int(arr[0][j]),color='blue', fontweight='bold')
-	plt.ylabel('amount')
+	plt.ylabel('Frequency')
 	plt.xlabel('avg_#ExcessOneChildren (#Node with more than 1 child/#Node)')
 	title=dir[dir.rfind('/'):]
 	plt.title(title)
